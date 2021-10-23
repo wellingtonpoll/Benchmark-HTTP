@@ -39,7 +39,7 @@ Agora execute o projeto Benchmark.Http.Sample.ConsoleApp com o seguinte comando 
 dotnet run -c release Benchmark.Http.Sample.ConsoleApp.csproj
 ```
 Agora é só aguardar o término da execução, ao finalizar no console você verá algo semelhante a essa tabela:
-![Console](http://url/to/img.png)
+![Console](https://github.com/wellingtonpoll/Benchmark-HTTP/blob/main/assets/banchmark_console_summary.png)
 
 A execução do banchmark também gera o diretório "__banchmark-http/src/Benchmark.Http.Sample.ConsoleApp/BenchmarkDotNet.Artifacts__" contendo arquivos com os mesmos resultados.
 
