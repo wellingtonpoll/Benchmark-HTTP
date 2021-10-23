@@ -1,19 +1,21 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Columns;
-using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Diagnosers;
+using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Mathematics;
 using BenchmarkDotNet.Order;
 using Flurl.Http;
-using Perfolizer.Mathematics.OutlierDetection;
 using RestSharp;
 
 namespace Benchmark.Http.Sample.ConsoleApp
 {
-    [Orderer(SummaryOrderPolicy.FastestToSlowest)]
+    [MemoryDiagnoser]
+    [AllStatisticsColumn]
     [RankColumn(NumeralSystem.Arabic)]
+    [Orderer(SummaryOrderPolicy.FastestToSlowest)]
+    [HardwareCounters(HardwareCounter.BranchMispredictions, HardwareCounter.BranchInstructions)]
+    
     public class BenchmarkHttp
     {
         private readonly string _url = "http://localhost:5000/WeatherForecast";
