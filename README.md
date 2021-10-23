@@ -36,7 +36,7 @@ dotnet run -c release "Benchmark.Http.Sample.Api.csproj"
 ```
 Agora execute o projeto Benchmark.Http.Sample.ConsoleApp com o seguinte comando no diretório do arquivo "Benchmark.Http.Sample.ConsoleApp.csproj"
 ```sh
-dotnet run -c release Benchmark.Http.Sample.ConsoleApp.csproj
+dotnet run -c release "Benchmark.Http.Sample.ConsoleApp.csproj"
 ```
 Agora é só aguardar o término da execução, ao finalizar no console você verá algo semelhante a essa tabela:
 ![Console](https://github.com/wellingtonpoll/Benchmark-HTTP/blob/main/assets/banchmark_console_summary.png)
