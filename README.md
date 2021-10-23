@@ -38,9 +38,10 @@ Agora execute o projeto Benchmark.Http.Sample.ConsoleApp com o seguinte comando 
 ```sh
 dotnet run -c release "Benchmark.Http.Sample.ConsoleApp.csproj"
 ```
-Agora é só aguardar o término da execução, ao finalizar no console você verá algo semelhante a essa tabela:
+Agora é só aguardar o término da execução, ao finalizar no console você verá algo semelhante a tabela abaixo.
 ![Console](https://github.com/wellingtonpoll/Benchmark-HTTP/blob/main/assets/banchmark_console_summary.png)
 
+Esses resultados nos mostram que a biblioteca Flurl se mostrou muito mais eficiente, sendo mais rápida, consumindo menos memória, sendo melhor gerenciada pelo GC e o mais importante, um número de operações/segundo bem superior se compararmos com o HTTP Client do System.Net.Http e com o RestSharp. 
 A execução do banchmark também gera o diretório "__banchmark-http/src/Benchmark.Http.Sample.ConsoleApp/BenchmarkDotNet.Artifacts__" contendo arquivos com os mesmos resultados.
 
 ## License
