@@ -23,5 +23,7 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Show Paths
+      run: ls
     - name: Benchmark
       run: cd src\Benchmark.Http.Sample.ConsoleApp; sudo dotnet run -c Release "Benchmark.Http.Sample.ConsoleApp.csproj";
