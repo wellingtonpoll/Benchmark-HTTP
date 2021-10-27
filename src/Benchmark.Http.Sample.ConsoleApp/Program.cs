@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Running;
+using System;
 
 namespace Benchmark.Http.Sample.ConsoleApp
 {
@@ -6,7 +7,10 @@ namespace Benchmark.Http.Sample.ConsoleApp
     {
         static void Main(string[] args)
         {
-            BenchmarkRunner.Run<BenchmarkHttp>();
+            var summary = BenchmarkRunner.Run<BenchmarkHttp>();
+
+            Console.WriteLine(summary);
+            Console.ReadKey();
         }
     }
 }
