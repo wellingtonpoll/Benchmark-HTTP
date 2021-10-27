@@ -27,3 +27,6 @@ jobs:
       run: ls
     - name: Benchmark
       run: cd src/Benchmark.Http.Sample.ConsoleApp; sudo dotnet run -c Release "https://reqbin.com/echo"
+    - uses: actions/upload-artifact@v2
+      with:
+        path: src/Benchmark.Http.Sample.ConsoleApp/BenchmarkDotNet.Artifacts/results/Benchmark.Http.Sample.ConsoleApp.BenchmarkHttp-report.html
