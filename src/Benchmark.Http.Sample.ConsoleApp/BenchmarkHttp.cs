@@ -18,7 +18,7 @@ namespace Benchmark.Http.Sample.ConsoleApp
     
     public class BenchmarkHttp
     {
-        private readonly string _url = "http://localhost:5000/WeatherForecast";
+        private readonly string _url = "https://www.google.com.br/";
         private IHttpClientFactory _HttpClientFactory;
 
         [GlobalSetup]

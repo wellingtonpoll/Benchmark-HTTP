@@ -10,7 +10,6 @@ namespace Benchmark.Http.Sample.ConsoleApp
             var summary = BenchmarkRunner.Run<BenchmarkHttp>();
 
             Console.WriteLine(summary);
-            Console.ReadKey();
         }
     }
 }
