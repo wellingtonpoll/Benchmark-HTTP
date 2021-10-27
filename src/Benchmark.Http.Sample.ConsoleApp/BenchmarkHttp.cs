@@ -14,12 +14,17 @@ namespace Benchmark.Http.Sample.ConsoleApp
     [AllStatisticsColumn]
     [RankColumn(NumeralSystem.Arabic)]
     [Orderer(SummaryOrderPolicy.FastestToSlowest)]
-   // [HardwareCounters(HardwareCounter.BranchMispredictions, HardwareCounter.BranchInstructions)]
-    
+    [HardwareCounters(HardwareCounter.BranchMispredictions, HardwareCounter.BranchInstructions)]
+
     public class BenchmarkHttp
     {
-        private readonly string _url = "https://www.google.com.br/";
         private IHttpClientFactory _HttpClientFactory;
+
+        public static string[] DefaultURL { get; set; } = new[] { "http://localhost:5000/WeatherForecast" };
+
+        [ParamsSource(nameof(DefaultURL))]
+        public string Url { get; set; }
+
 
         [GlobalSetup]
         public void Setup()
@@ -36,26 +41,26 @@ namespace Benchmark.Http.Sample.ConsoleApp
         [Benchmark]
         public async Task<string> HttpClientWithFactory()
         {
-            return await _HttpClientFactory.CreateClient().GetStringAsync(_url);
+            return await _HttpClientFactory.CreateClient().GetStringAsync(Url);
         }
 
         [Benchmark]
         public async Task<string> HttpClientPlain()
         {
-            return await new HttpClient().GetStringAsync(_url); 
+            return await new HttpClient().GetStringAsync(Url);
         }
 
         [Benchmark]
         public async Task<string> RestSharp()
         {
-            var response = await new RestClient(_url).ExecuteAsync(new RestRequest(Method.GET));
+            var response = await new RestClient(Url).ExecuteAsync(new RestRequest(Method.GET));
             return response.Content;
         }
 
         [Benchmark]
         public async Task<string> Flurl()
         {
-           return await _url.GetStringAsync();
+            return await Url.GetStringAsync();
         }
     }
 }

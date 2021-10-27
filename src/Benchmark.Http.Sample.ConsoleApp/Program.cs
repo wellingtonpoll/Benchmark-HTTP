@@ -7,9 +7,11 @@ namespace Benchmark.Http.Sample.ConsoleApp
     {
         static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<BenchmarkHttp>();
+            if (args.Length == 1)
+                BenchmarkHttp.DefaultURL = args;
 
-            Console.WriteLine(summary);
+            Console.WriteLine("Requesting URL: {0}", BenchmarkHttp.DefaultURL);
+            BenchmarkRunner.Run<BenchmarkHttp>();
         }
     }
 }
