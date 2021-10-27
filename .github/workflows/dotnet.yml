@@ -26,4 +26,4 @@ jobs:
     - name: Show Paths
       run: ls
     - name: Benchmark
-      run: cd src\Benchmark.Http.Sample.ConsoleApp; sudo dotnet run -c Release "Benchmark.Http.Sample.ConsoleApp.csproj";
+      run: cd src/Benchmark.Http.Sample.ConsoleApp; sudo dotnet run -c Release "Benchmark.Http.Sample.ConsoleApp.csproj";
