@@ -14,7 +14,7 @@ namespace Benchmark.Http.Sample.ConsoleApp
     [AllStatisticsColumn]
     [RankColumn(NumeralSystem.Arabic)]
     [Orderer(SummaryOrderPolicy.FastestToSlowest)]
-    [HardwareCounters(HardwareCounter.BranchMispredictions, HardwareCounter.BranchInstructions)]
+   // [HardwareCounters(HardwareCounter.BranchMispredictions, HardwareCounter.BranchInstructions)]
 
     public class BenchmarkHttp
     {
