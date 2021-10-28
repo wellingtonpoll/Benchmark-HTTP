@@ -1,6 +1,8 @@
 # BENCHMARK
 ## .NET HTTP benchmark
 
+[![.NET](https://github.com/adansklevanskis/Benchmark-HTTP/actions/workflows/dotnet.yml/badge.svg)](https://github.com/adansklevanskis/Benchmark-HTTP/actions/workflows/dotnet.yml)
+
 O projeto é constituído por duas aplicações, uma API que é responsável por receber as requisições e uma aplicação console onde o banchmark foi implementado utilizando a biblioteca [BenchmarkDotNet](https://www.nuget.org/packages/BenchmarkDotNet/). A implementação consiste em realizar uma requisição HTTP para a API do próprio repositório utilizando as seguintes bibliotecas:
 
 - System.Net.Http [580.8M downloads nuget.org]
