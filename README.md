@@ -5,9 +5,10 @@
 
 O projeto é constituído por duas aplicações, uma API que é responsável por receber as requisições e uma aplicação console onde o banchmark foi implementado utilizando a biblioteca [BenchmarkDotNet](https://www.nuget.org/packages/BenchmarkDotNet/). A implementação consiste em realizar uma requisição HTTP para a API do próprio repositório utilizando as seguintes bibliotecas:
 
-- System.Net.Http [580.8M downloads nuget.org]
-- RestSharp: 98.6M downloads nuget.org , Github: 8.1k Stars, Github: 2.2k Forks, Github: 220 Contributors
-- Flurl.Http: 15.5M downloads nuget.org, Github: 2.8k Stars, Github: 273k Forks, Github: 24 Contributors
+- System.Net.Http [1.6B downloads nuget.org]
+- RestSharp: 230.4M downloads nuget.org , Github: 9.2k Stars, Github: 2.3k Forks, Github: 256 Contributors
+- Flurl.Http: 45.4M downloads nuget.org, Github: 3.7k Stars, Github: 359 Forks, Github: 22 Contributors
+- Refit: 55.8M downloads nuget.org, Github: 7.4k Stars, Github: 699 Forks, Github: 108 Contributors
 
 ## Métricas
 A biblioteca BenchmarkDotNet captura as métricas de cada requisição HTTP em uma série de execuções gerando um relatório com as seguintes colunas:
@@ -43,7 +44,6 @@ dotnet run -c release "Benchmark.Http.Sample.ConsoleApp.csproj"
 Agora é só aguardar o término da execução, ao finalizar no console você verá algo semelhante a tabela abaixo.
 ![Console](https://github.com/wellingtonpoll/Benchmark-HTTP/blob/main/assets/banchmark_console_summary.png)
 
-Esses resultados nos mostram que a biblioteca Flurl se mostrou muito mais eficiente, sendo mais rápida, consumindo menos memória, sendo melhor gerenciada pelo GC e o mais importante, um número de operações/segundo bem superior se compararmos com o HTTP Client do System.Net.Http e com o RestSharp. 
 A execução do banchmark também gera o diretório "__banchmark-http/src/Benchmark.Http.Sample.ConsoleApp/BenchmarkDotNet.Artifacts__" contendo arquivos com os mesmos resultados.
 
 ## License
